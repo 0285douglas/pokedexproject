@@ -11,10 +11,40 @@ public class PokedexRepositoryImpl implements PokedexRepository{
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+//    private String sql = loadSqlFromFile("src/main/resources/sql/InsertPokemon.sql");
+
+    private LoadSqlFromFile loadSqlFromFile;
+
     @Override
     public void savePokemon(Pokemon pokemon) throws Exception {
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void updatePokemon(int id, Pokemon pokemon) throws Exception {
