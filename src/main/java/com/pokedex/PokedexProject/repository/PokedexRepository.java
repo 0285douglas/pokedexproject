@@ -8,9 +8,9 @@ public interface PokedexRepository {
 
     void savePokemon(Pokemon pokemon) throws Exception;
 
-    void updatePokemon(int id, Pokemon pokemon) throws Exception;
+    void updatePokemon(Pokemon pokemon) throws Exception;
 
-    void deletePokemon(int id) throws Exception;
+    void deletePokemon(Pokemon pokemon) throws Exception;
 
     List<Pokemon> pokemonList();
 
