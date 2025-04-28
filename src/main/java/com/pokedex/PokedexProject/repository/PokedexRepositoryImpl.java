@@ -33,8 +33,8 @@ public class PokedexRepositoryImpl implements PokedexRepository{
 
     @Override
     public void deletePokemon(Pokemon pokemon) throws Exception {
-        String sql = loadSqlFromFile("src/main/resources/sql/UpdatePokemon.sql");
-        jdbcTemplate.update(sql, pokemon.getTipo(), pokemon.getNome());
+        String sql = loadSqlFromFile("src/main/resources/sql/DeletePokemon.sql");
+        jdbcTemplate.update(sql, pokemon.getNome());
     }
 
     @Override

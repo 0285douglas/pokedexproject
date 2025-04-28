@@ -39,7 +39,7 @@ public class PokedexController {
     public String deletePokemon(@RequestBody Pokemon pokemon) throws Exception{
         try {
             pokedexRepository.deletePokemon(pokemon);
-            return "O pokemon " + pokemon + " foi removido da Pokédex";
+            return "O pokemon foi removido da Pokédex";
         } catch (Exception e) {
             return "Erro ao tentar exlcuir o pokémon da Pokédex " + e.getMessage();
         }
