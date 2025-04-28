@@ -1,27 +1,32 @@
 package com.pokedex.PokedexProject.controller;
 
 import com.pokedex.PokedexProject.model.Pokemon;
+import com.pokedex.PokedexProject.repository.PokedexRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@SpringBootApplication
+@RestController
+@RequestMapping("/pokedex")
 public class PokedexController {
 
-//    public void savePokemon(Pokemon pokemon) throws Exception{
-//
-//    }
-//
-//    public void updatePokemon(int id, Pokemon pokemon) throws Exception{
-//
-//    }
-//
-//    public void deletePokemon(int id) throws Exception{
-//
-//    }
-//
-//    List<Pokemon> pokemonList(){
-//
-//    }
+    @Autowired
+    private PokedexRepository pokedexRepository;
+
+    @PostMapping
+    public String savePokemon(@RequestBody Pokemon pokemon) {
+        try {
+            pokedexRepository.savePokemon(pokemon);
+            return "Pokemon salvo com sucesso!";
+        } catch (Exception e) {
+            return "Erro ao salvar Pokémon: " + e.getMessage();
+        }
+    }
+
 
 }

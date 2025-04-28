@@ -1,4 +1,4 @@
-INSERT INTO Pokedex (
+INSERT INTO pokemons (
     NOME,
     TIPO,
     NUM_POKEDEX
